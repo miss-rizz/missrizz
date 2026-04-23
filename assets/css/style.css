@@ -23,55 +23,91 @@ html, body {
 
 a { text-decoration: none; color: inherit; }
 
-/* NAV */
-.nav {
-  position: sticky;
+/* HAMBURGER */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 300;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background: var(--indigo-dark);
+  border-radius: 2px;
+}
+
+/* NAV OVERLAY */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 27, 75, 0.18);
+}
+
+.nav-panel {
+  position: absolute;
   top: 0;
-  z-index: 100;
+  right: 0;
+  height: 100%;
+  width: 260px;
   background: #fff;
-  border-bottom: 1px solid var(--border);
-  padding: 14px 40px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--indigo-dark);
-  letter-spacing: 0.5px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 40px;
   gap: 28px;
 }
 
-.nav-links a {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--muted);
+.nav-panel a {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--indigo-dark);
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--indigo); }
+.nav-panel a:hover { color: var(--indigo); }
 
-.nav-links a.active {
+.nav-panel a.active {
   color: var(--indigo);
-  font-weight: 700;
   border-bottom: 2px solid var(--coral);
   padding-bottom: 2px;
+  width: fit-content;
 }
 
 .btn-hire {
+  font-size: 13px !important;
+  font-weight: 700 !important;
   background: var(--indigo);
   color: #fff !important;
   border-radius: 20px;
-  padding: 7px 18px;
-  font-size: 12px;
-  font-weight: 600;
+  padding: 10px 22px !important;
+  width: fit-content;
   transition: opacity 0.2s;
 }
 
@@ -319,8 +355,6 @@ a { text-decoration: none; color: inherit; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .nav { padding: 12px 20px; }
-  .nav-links a:not(.btn-hire) { display: none; }
 
   .timeline-wrap { padding: 28px 20px 48px; }
   .timeline-line { left: 28px; }

@@ -64,15 +64,21 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">Miss Rizz</a>
-    <div class="nav-links">
+  <!-- HAMBURGER -->
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- NAV PANEL -->
+  <div class="nav-overlay" id="navOverlay">
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <nav class="nav-panel">
+      <a href="index.html">Home</a>
       <a href="experience.html">Experience</a>
       <a href="projects.html" class="active">Projects</a>
       <a href="mailto:agrawalritika1811@gmail.com" class="btn-hire">Hire me</a>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- COMING SOON -->
   <div class="coming-soon" data-aos="fade-up" data-aos-duration="600">
@@ -93,6 +99,13 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
+  <script>
+    AOS.init({ once: true });
+    const hamburger = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('navOverlay');
+    const navBackdrop = document.getElementById('navBackdrop');
+    hamburger.addEventListener('click', () => navOverlay.classList.toggle('open'));
+    navBackdrop.addEventListener('click', () => navOverlay.classList.remove('open'));
+  </script>
 </body>
 </html>
