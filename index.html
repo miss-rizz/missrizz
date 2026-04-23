@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritika Agrawal — Miss Rizz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    .hero {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 53px - 45px - 57px);
+    }
+
+    /* SLIDESHOW */
+    .hero-photo {
+      background: linear-gradient(135deg, #4f46e5 0%, #818cf8 55%, #fb7185 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slideshow {
+      width: 75%;
+      max-width: 300px;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .slide.active { opacity: 1; position: relative; }
+
+    .slide img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 16px 16px 0 0;
+      display: block;
+      max-height: 420px;
+    }
+
+    .slide-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .slide-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .slide-dot.active { background: #fff; }
+
+    /* RIGHT TEXT */
+    .hero-text {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 48px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--indigo-light);
+      color: var(--indigo);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      width: fit-content;
+      text-transform: uppercase;
+    }
+
+    .hero-name {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--indigo-dark);
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .hero-name span { color: var(--indigo); }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tagline-bar {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 13px 40px;
+      text-align: center;
+    }
+
+    .tagline-bar p {
+      font-size: 12px;
+      color: #9ca3af;
+      font-style: italic;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 300px; }
+      .slideshow { width: 60%; }
+      .hero-text { padding: 36px 24px; }
+      .hero-name { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" data-aos="fade-down" data-aos-duration="600">
+    <a href="index.html" class="nav-logo">Miss Rizz</a>
+    <div class="nav-links">
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="mailto:agrawalritika1811@gmail.com" class="btn-hire">Hire me</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo">
+      <div class="slideshow" id="slideshow">
+        <div class="slide active"><img src="assets/img/photo-1.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/photo-2.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/photo-3.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/photo-4.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/photo-5.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/photo-6.jpeg" alt="Ritika Agrawal" /></div>
+      </div>
+      <div class="slide-dots" id="dots"></div>
+    </div>
+
+    <div class="hero-text" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+      <span class="hero-badge">Software Development Engineer 2</span>
+      <h1 class="hero-name">Ritika<br><span>Agrawal</span></h1>
+      <div class="hero-ctas">
+        <a href="experience.html" class="btn-primary">View Experience →</a>
+        <a href="projects.html" class="btn-outline">See Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE -->
+  <div class="tagline-bar">
+    <p>Tea over coffee, you can't change my mind.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-copy">© 2026 Ritika Agrawal</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/ms-ritika-agrawal/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/miss-rizz" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:agrawalritika1811@gmail.com" class="email">Email</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    let current = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
+      current = n;
+      slides[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
+    }
+
+    setInterval(() => goTo((current + 1) % slides.length), 3500);
+  </script>
+</body>
+</html>
