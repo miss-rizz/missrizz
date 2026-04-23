@@ -6,7 +6,27 @@
   <title>Ritika Agrawal — Miss Rizz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Glass+Antiqua&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Le Jour Serif';
+      src: url('fonts/le-jour-serif/Le Jour Serif.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Magazine';
+      src: url('fonts/magazine/Magazine.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Magazine';
+      src: url('fonts/magazine/Magazine-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
@@ -15,7 +35,7 @@
     .hero {
       flex: 1;
       display: grid;
-      grid-template-columns: 7fr 3fr;
+      grid-template-columns: 6fr 4fr;
       min-height: calc(100vh - 45px - 57px);
     }
 
@@ -36,7 +56,22 @@
       overflow: hidden;
       position: relative;
       border: 4px solid rgba(255,255,255,0.35);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      box-shadow:
+        0 0 4px  14px  rgba(255,255,255,0.18),
+        0 0 4px  28px  rgba(199,210,254,0.15),
+        0 0 4px  44px  rgba(165,180,252,0.13),
+        0 0 4px  62px  rgba(129,140,248,0.11),
+        0 0 4px  82px  rgba(199,210,254,0.09),
+        0 0 4px  104px rgba(165,180,252,0.08),
+        0 0 4px  128px rgba(129,140,248,0.06),
+        0 0 4px  154px rgba(199,210,254,0.05),
+        0 0 4px  182px rgba(165,180,252,0.04),
+        0 0 4px  212px rgba(129,140,248,0.03),
+        0 0 4px  244px rgba(199,210,254,0.025),
+        0 0 4px  278px rgba(165,180,252,0.02),
+        0 0 4px  314px rgba(255,255,255,0.015),
+        0 0 4px  352px rgba(199,210,254,0.01),
+        0 0 4px  392px rgba(129,140,248,0.008);
     }
 
     .slide {
@@ -86,17 +121,22 @@
       justify-content: center;
       padding: 40px 36px;
       text-align: left;
+      overflow: hidden;
+      border-left: 1px solid #000;
     }
 
     .hero-name {
-      font-size: 64px;
-      font-weight: 900;
+      font-family: 'Glass Antiqua', serif;
+      font-size: 68px;
+      font-weight: 600;
       color: var(--indigo-dark);
-      line-height: 1.05;
+      line-height: 1.1;
       margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
-    .hero-name span { color: var(--indigo); font-size: 52px; }
+    .hero-name span { color: var(--indigo); font-size: 36px; }
 
     .hero-title {
       font-size: 11px;
@@ -142,7 +182,7 @@
   <div class="nav-overlay" id="navOverlay">
     <div class="nav-backdrop" id="navBackdrop"></div>
     <nav class="nav-panel">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <a href="experience.html">Experience</a>
       <a href="projects.html">Projects</a>
       <a href="mailto:agrawalritika1811@gmail.com" class="btn-hire">Hire me</a>
@@ -153,23 +193,19 @@
   <section class="hero">
     <div class="hero-photo">
       <div class="slideshow" id="slideshow">
-        <div class="slide active"><img src="assets/img/photo-1.jpeg" alt="Ritika Agrawal" /></div>
-        <div class="slide"><img src="assets/img/photo-4.jpeg" alt="Ritika Agrawal" /></div>
-        <div class="slide"><img src="assets/img/photo-5.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide active"><img src="assets/img/my_pics/photo-1.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/my_pics/photo-4.jpeg" alt="Ritika Agrawal" /></div>
+        <div class="slide"><img src="assets/img/my_pics/photo-5.jpeg" alt="Ritika Agrawal" /></div>
       </div>
       <div class="slide-dots" id="dots"></div>
+      <p id="tagline" style="position:absolute;bottom:72px;left:50%;transform:translateX(-50%);font-size:13px;color:rgba(255,255,255,1.0);font-style:italic;letter-spacing:0.4px;white-space:nowrap;transition:opacity 1.2s ease;">Tea over coffee, you can't change my mind.</p>
     </div>
 
     <div class="hero-text" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
-      <h1 class="hero-name">Ritika<br><span>Agrawal</span></h1>
-      <p class="hero-title">Software Developer II</p>
+      <img src="assets/img/name-display.jpg" alt="Ritika Agrawal" style="width:100%;height:100%;object-fit:contain;transform:scale(1.2);transform-origin:left center;" />
     </div>
   </section>
 
-  <!-- TAGLINE -->
-  <div class="tagline-bar">
-    <p>Tea over coffee, you can't change my mind.</p>
-  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -211,6 +247,22 @@
     }
 
     setInterval(() => goTo((current + 1) % slides.length), 3500);
+
+    const taglines = [
+      "Tea over coffee, you can't change my mind.",
+      "Acting Non-chalant in chaos is my superpower.",
+      "You can reject me, but you will never forget me."
+    ];
+    const taglineEl = document.getElementById('tagline');
+    let taglineCurrent = 0;
+    setInterval(() => {
+      taglineEl.style.opacity = '0';
+      setTimeout(() => {
+        taglineCurrent = (taglineCurrent + 1) % taglines.length;
+        taglineEl.textContent = taglines[taglineCurrent];
+        taglineEl.style.opacity = '1';
+      }, 1200);
+    }, 6000);
   </script>
 </body>
 </html>
