@@ -1,14 +1,17 @@
 :root {
-  --indigo:       #4f46e5;
-  --indigo-dark:  #1e1b4b;
-  --indigo-mid:   #818cf8;
-  --indigo-light: #e0e7ff;
-  --coral:        #fb7185;
-  --coral-light:  #ffe4e6;
-  --bg:           #f8f7ff;
-  --text:         #1e1b4b;
-  --muted:        #6b7280;
-  --border:       #e0e7ff;
+  --indigo:        #4f46e5;
+  --indigo-dark:   #1e1b4b;
+  --indigo-mid:    #818cf8;
+  --indigo-light:  #e0e7ff;
+  --coral:         #fb7185;
+  --coral-light:   #ffe4e6;
+  --emerald:       #059669;
+  --emerald-dark:  #064e3b;
+  --emerald-light: #d1fae5;
+  --bg:            #f8f7ff;
+  --text:          #1e1b4b;
+  --muted:         #6b7280;
+  --border:        #e0e7ff;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -363,9 +366,96 @@ a { text-decoration: none; color: inherit; }
 .tag-indigo { background: var(--indigo-light); color: #3730a3; }
 .tag-coral  { background: var(--coral-light);  color: #be123c; }
 
+/* Emerald (current role) */
+.dot-emerald  { background: var(--emerald); box-shadow: 0 0 0 2px var(--emerald); }
+.card-emerald { border: 1px solid var(--emerald-light); box-shadow: 0 2px 12px rgba(5, 150, 105, 0.10); }
+.year-emerald { color: var(--emerald); }
+.tag-emerald  { background: var(--emerald-light); color: #065f46; }
+.link-emerald { background: var(--emerald-light); color: var(--emerald); }
+
+/* NOW badge */
+.now-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--emerald);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.now-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pulse-dot 1.5s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+/* Card bullet list */
+.card-bullets {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-bullets li {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+  padding-left: 16px;
+  position: relative;
+}
+
+.card-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--indigo);
+  font-size: 10px;
+  top: 1px;
+}
+
+.card-emerald .card-bullets li::before { color: var(--emerald); }
+.card-coral   .card-bullets li::before { color: var(--coral); }
+
+/* Stat chips */
+.stat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.stat-chip {
+  background: var(--indigo-light);
+  color: var(--indigo-dark);
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.stat-chip-coral   { background: var(--coral-light);   color: #9f1239; }
+.stat-chip-emerald { background: var(--emerald-light); color: #065f46; }
+
 /* FADED older entries */
-.fade-1 { opacity: 0.65; }
-.fade-2 { opacity: 0.4;  }
+.fade-1 { opacity: 0.75; }
+.fade-2 { opacity: 0.5;  }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
