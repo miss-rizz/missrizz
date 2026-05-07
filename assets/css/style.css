@@ -27,6 +27,8 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+body { padding-bottom: 57px; }
+
 a { text-decoration: none; color: inherit; }
 
 /* HAMBURGER */
@@ -121,6 +123,11 @@ a { text-decoration: none; color: inherit; }
 
 /* FOOTER */
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   background: var(--indigo-light);
   padding: 16px 40px;
   display: flex;
