@@ -8,6 +8,9 @@
   --emerald:       #059669;
   --emerald-dark:  #064e3b;
   --emerald-light: #d1fae5;
+  --amber:         #d97706;
+  --amber-dark:    #78350f;
+  --amber-light:   #fef3c7;
   --bg:            #f8f7ff;
   --text:          #1e1b4b;
   --muted:         #6b7280;
@@ -452,6 +455,48 @@ a { text-decoration: none; color: inherit; }
 
 .stat-chip-coral   { background: var(--coral-light);   color: #9f1239; }
 .stat-chip-emerald { background: var(--emerald-light); color: #065f46; }
+
+/* Amber (volunteer / passion role) */
+.dot-amber    { background: var(--amber); box-shadow: 0 0 0 2px var(--amber); }
+.card-amber   { border: 1.5px dashed var(--amber); box-shadow: 0 2px 12px rgba(217, 119, 6, 0.10); }
+.card-amber:hover { box-shadow: 0 4px 20px rgba(217, 119, 6, 0.18); }
+.year-amber   { color: var(--amber); }
+.tag-amber    { background: var(--amber-light); color: var(--amber-dark); }
+.card-amber .card-bullets li::before { color: var(--amber); }
+
+/* Passion / volunteer badge */
+.passion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--amber);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Parallel cards (Gruve + AICESA side by side) */
+.timeline-parallel {
+  display: flex;
+  flex: 1;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.timeline-parallel .timeline-card {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline-parallel { flex-direction: column; }
+}
 
 /* FADED older entries */
 .fade-1 { opacity: 0.75; }

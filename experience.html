@@ -40,41 +40,62 @@
   <div class="timeline-wrap">
     <div class="timeline-line"></div>
 
-    <!-- Gruve — CURRENT -->
+    <!-- Current period — Gruve + AICESA in parallel -->
     <div class="timeline-entry" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
       <div class="timeline-dot-wrap">
         <div class="timeline-dot dot-emerald"></div>
       </div>
-      <div class="timeline-card card-emerald">
-        <div class="card-header-row">
-          <div>
-            <div class="card-year year-emerald">
-              Jan 2026 – Present
-              <span class="now-badge"><span class="now-dot"></span>Now</span>
-            </div>
-            <div class="card-title">Software Developer</div>
-            <div class="card-sub">Gruve · India</div>
+      <div class="timeline-parallel">
+
+        <!-- Gruve -->
+        <div class="timeline-card card-emerald">
+          <div class="card-year year-emerald">
+            Jan 2026 – Present
+            <span class="now-badge"><span class="now-dot"></span>Now</span>
           </div>
-          <div class="card-logo" style="background: linear-gradient(135deg, #059669, #6ee7b7);"></div>
+          <div class="card-title">Software Developer II</div>
+          <div class="card-sub" style="margin-bottom:10px;">Gruve · India</div>
+          <ul class="card-bullets">
+            <li>Designed full-stack observability system — metrics, distributed traces, alerting &amp; retention strategies for the inferencing MVP</li>
+            <li>Deployed &amp; managed services on Kubernetes clusters, handling control plane config and GPU-aware scheduling</li>
+            <li>Engineered batched model ingestion pipeline for 70B+ param models (LLaMA 3 70B) across HuggingFace, AWS S3, and other sources</li>
+            <li>Authored 90-case test automation framework — adopted as a shared library across multiple teams</li>
+          </ul>
+          <div class="stat-chips">
+            <span class="stat-chip stat-chip-emerald">70B param models</span>
+            <span class="stat-chip stat-chip-emerald">90 test cases shipped</span>
+          </div>
+          <div class="tags">
+            <span class="tag tag-emerald">Python</span>
+            <span class="tag tag-emerald">Kubernetes</span>
+            <span class="tag tag-emerald">Observability</span>
+            <span class="tag tag-indigo">LLMs</span>
+            <span class="tag tag-indigo">Pytest</span>
+            <span class="tag tag-indigo">AWS S3</span>
+          </div>
         </div>
-        <ul class="card-bullets">
-          <li>Designed full-stack observability system — metrics, distributed traces, alerting &amp; retention strategies for the inferencing MVP</li>
-          <li>Deployed &amp; managed services on Kubernetes clusters, handling control plane config and GPU-aware scheduling</li>
-          <li>Engineered batched model ingestion pipeline for 70B+ param models (LLaMA 3 70B) across HuggingFace, AWS S3, and other sources</li>
-          <li>Authored 90-case test automation framework — adopted as a shared library across multiple teams</li>
-        </ul>
-        <div class="stat-chips">
-          <span class="stat-chip stat-chip-emerald">70B param models</span>
-          <span class="stat-chip stat-chip-emerald">90 test cases shipped</span>
+
+        <!-- AICESA -->
+        <div class="timeline-card card-amber">
+          <div class="card-year year-amber">
+            Dec 2025 – Present
+            <span class="passion-badge">✦ Volunteer</span>
+          </div>
+          <div class="card-title">AI International Liaison Manager</div>
+          <div class="card-sub" style="margin-bottom:10px;">AICESA · Nonprofit · Remote</div>
+          <ul class="card-bullets">
+            <li>Driving AI awareness and literacy outreach across Northern African nations including Nigeria</li>
+            <li>Bridging global AI communities with underserved and underrepresented regions</li>
+            <li>Advocating for inclusive AI education and access where emerging tech resources are scarce</li>
+          </ul>
+          <div class="tags">
+            <span class="tag tag-amber">AI Advocacy</span>
+            <span class="tag tag-amber">Northern Africa</span>
+            <span class="tag tag-amber">Community</span>
+            <span class="tag tag-amber">Nonprofit</span>
+          </div>
         </div>
-        <div class="tags">
-          <span class="tag tag-emerald">Python</span>
-          <span class="tag tag-emerald">Kubernetes</span>
-          <span class="tag tag-emerald">Observability</span>
-          <span class="tag tag-indigo">LLMs</span>
-          <span class="tag tag-indigo">Pytest</span>
-          <span class="tag tag-indigo">AWS S3</span>
-        </div>
+
       </div>
     </div>
 
@@ -84,14 +105,9 @@
         <div class="timeline-dot dot-indigo"></div>
       </div>
       <div class="timeline-card card-indigo">
-        <div class="card-header-row">
-          <div>
-            <div class="card-year year-indigo">Sep 2024 – Sep 2025</div>
-            <div class="card-title">Software Developer II</div>
-            <div class="card-sub">AtomicAds (Adnaut) · Indore, India · Founding team</div>
-          </div>
-          <div class="card-logo" style="background: linear-gradient(135deg, #4f46e5, #818cf8);"></div>
-        </div>
+        <div class="card-year year-indigo">Sep 2024 – Sep 2025</div>
+        <div class="card-title">Software Developer II</div>
+        <div class="card-sub" style="margin-bottom:10px;">AtomicAds (Adnaut) · Indore, India · Founding team</div>
         <ul class="card-bullets">
           <li>Drove $150K revenue growth — built Django SaaS modules with OAuth connectors for DV360, TTD &amp; Vistar</li>
           <li>Automated a 20–24hr manual ad verification workflow end-to-end, cutting ops load to near zero</li>
@@ -122,14 +138,9 @@
         <div class="timeline-dot dot-coral"></div>
       </div>
       <div class="timeline-card card-coral">
-        <div class="card-header-row">
-          <div>
-            <div class="card-year year-coral">Oct 2023 – Aug 2024</div>
-            <div class="card-title">Software Developer</div>
-            <div class="card-sub">High Insight · Bhopal, India</div>
-          </div>
-          <div class="card-logo" style="background: linear-gradient(135deg, #fb7185, #fda4af);"></div>
-        </div>
+        <div class="card-year year-coral">Oct 2023 – Aug 2024</div>
+        <div class="card-title">Software Developer</div>
+        <div class="card-sub" style="margin-bottom:10px;">High Insight · Bhopal, India</div>
         <ul class="card-bullets">
           <li>Built ML forecasting models for OPEX cycle predictions integrated into SAP Analytics Cloud (SAP SAC)</li>
           <li>Developed Python analytics app + JavaScript SAP module for OPEX, HR &amp; COGS expense management</li>
@@ -151,14 +162,9 @@
         <div class="timeline-dot dot-indigo"></div>
       </div>
       <div class="timeline-card card-indigo">
-        <div class="card-header-row">
-          <div>
-            <div class="card-year year-indigo">May 2021 – Sep 2023</div>
-            <div class="card-title">Software Engineer</div>
-            <div class="card-sub">Mastercard · Pune, India</div>
-          </div>
-          <div class="card-logo" style="background: linear-gradient(135deg, #818cf8, #c7d2fe);"></div>
-        </div>
+        <div class="card-year year-indigo">May 2021 – Sep 2023</div>
+        <div class="card-title">Software Engineer</div>
+        <div class="card-sub" style="margin-bottom:10px;">Mastercard · Pune, India</div>
         <ul class="card-bullets">
           <li>Built Python &amp; Java Spring Boot backends for IPM/T140 file processing with failure-aware logic</li>
           <li>Engineered Java Selenium automation suite for bank onboarding UI validation (6-month rotation)</li>
