@@ -481,6 +481,42 @@ a { text-decoration: none; color: inherit; }
   vertical-align: middle;
 }
 
+/* Experience 75% / Education 25% two-column layout */
+.exp-layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.exp-layout .timeline-wrap {
+  flex: 3;
+  max-width: none;
+  margin: 0;
+}
+
+.edu-sidebar {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 24px 60px 8px;
+  position: sticky;
+  top: 24px;
+}
+
+.edu-sidebar .label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--coral);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .exp-layout { flex-direction: column; }
+  .edu-sidebar { padding: 8px 20px 40px; width: 100%; position: static; }
+}
+
 /* Parallel cards (Gruve + AICESA side by side) */
 .timeline-parallel {
   display: flex;
