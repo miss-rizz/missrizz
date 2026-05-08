@@ -116,25 +116,6 @@
 
     .slide-dot.active { background: #fff; }
 
-    /* PHOTO SCRIM — darkens bottom so tagline pops */
-    .hero-photo::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .slide-dots { z-index: 5; }
-
-    #tagline {
-      z-index: 5;
-    }
-
     /* RIGHT TEXT */
     .hero-text {
       background: #fff;
@@ -236,7 +217,6 @@
         <div class="slide"><img src="assets/img/my_pics/photo-5.jpeg" alt="Ritika Agrawal" /></div>
       </div>
       <div class="slide-dots" id="dots"></div>
-      <p id="tagline" style="font-size:15px;font-weight:500;color:#fff;font-style:italic;letter-spacing:0.5px;white-space:nowrap;transition:opacity 1.2s ease;z-index:5;background:rgba(0,0,0,0.32);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:24px;padding:8px 20px;text-shadow:0 1px 6px rgba(0,0,0,0.4);">Tea over coffee, you can't change my mind.</p>
     </div>
 
     <div class="hero-text" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
@@ -244,6 +224,10 @@
     </div>
   </section>
 
+  <!-- TAGLINE BAR -->
+  <div class="tagline-bar">
+    <p id="tagline" style="transition:opacity 1.2s ease;">Tea over coffee, you can't change my mind.</p>
+  </div>
 
   <!-- EXPERIENCE -->
   <section id="experience">
