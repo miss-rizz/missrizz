@@ -217,7 +217,7 @@
         <div class="slide"><img src="assets/img/my_pics/photo-5.jpeg" alt="Ritika Agrawal" /></div>
       </div>
       <div class="slide-dots" id="dots"></div>
-      <p id="tagline" style="font-size:14px;font-weight:500;color:#fff;font-style:italic;letter-spacing:0.4px;transition:opacity 1.2s ease;text-shadow:0 1px 4px rgba(0,0,0,0.35),0 2px 12px rgba(0,0,0,0.2);text-align:center;padding:0 32px;">Tea over coffee, you can't change my mind.</p>
+      <p id="tagline" style="position:absolute;left:0;right:0;font-size:14px;font-weight:500;color:#fff;font-style:italic;letter-spacing:0.4px;transition:opacity 1.2s ease;text-shadow:0 1px 4px rgba(0,0,0,0.35),0 2px 12px rgba(0,0,0,0.2);text-align:center;padding:0 32px;">Tea over coffee, you can't change my mind.</p>
     </div>
 
     <div class="hero-text" data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
@@ -505,6 +505,21 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
+
+    function positionTagline() {
+      const photo    = document.querySelector('.hero-photo');
+      const circle   = document.getElementById('slideshow');
+      const tagline  = document.getElementById('tagline');
+      const dots     = document.getElementById('dots');
+      const photoTop = photo.getBoundingClientRect().top;
+      const circleBottom = circle.getBoundingClientRect().bottom - photoTop;
+      const dotsTop      = dots.getBoundingClientRect().top     - photoTop;
+      const mid = (circleBottom + dotsTop) / 2;
+      tagline.style.top = mid + 'px';
+      tagline.style.transform = 'translateY(-50%)';
+    }
+    positionTagline();
+    window.addEventListener('resize', positionTagline);
 
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.getElementById('dots');
