@@ -11,56 +11,46 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .coming-soon {
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    .projects-wrap {
       flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 48px 60px;
+      width: 100%;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .proj-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 24px 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 24px;
-      text-align: center;
+      gap: 0;
+      transition: box-shadow 0.2s;
     }
 
-    .coming-soon-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #4f46e5, #fb7185);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      font-size: 32px;
+    .proj-card:hover { box-shadow: 0 6px 24px rgba(79, 70, 229, 0.13); }
+    .card-emerald.proj-card:hover { box-shadow: 0 6px 24px rgba(5, 150, 105, 0.13); }
+    .card-coral.proj-card:hover   { box-shadow: 0 6px 24px rgba(251, 113, 133, 0.13); }
+    .card-amber.proj-card:hover   { box-shadow: 0 6px 24px rgba(217, 119, 6, 0.13); }
+
+    .proj-card .card-desc {
+      flex: 1;
+      margin-bottom: 14px;
     }
 
-    .coming-soon h2 {
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--indigo-dark);
-      margin-bottom: 10px;
+    @media (max-width: 640px) {
+      .projects-wrap { padding: 24px 20px 48px; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
-
-    .coming-soon p {
-      font-size: 14px;
-      color: #9ca3af;
-      max-width: 320px;
-      line-height: 1.65;
-    }
-
-    .coming-soon .pill {
-      display: inline-block;
-      background: var(--coral-light);
-      color: #be123c;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    body { display: flex; flex-direction: column; min-height: 100vh; }
   </style>
 </head>
 <body>
@@ -81,12 +71,85 @@
     </nav>
   </div>
 
-  <!-- COMING SOON -->
-  <div class="coming-soon" data-aos="fade-up" data-aos-duration="600">
-    <div class="coming-soon-icon">🎮</div>
-    <span class="pill">Work in Progress</span>
-    <h2>Coming Soon</h2>
-    <p>Projects are being polished and will be live here shortly. Check back soon.</p>
+  <!-- HEADER -->
+  <div class="page-header" data-aos="fade-down" data-aos-duration="500">
+    <p class="label">work</p>
+    <h1>Projects</h1>
+    <p class="subtitle">Things I built because they needed to exist.</p>
+  </div>
+
+  <!-- PROJECTS GRID -->
+  <div class="projects-wrap">
+    <div class="projects-grid">
+
+      <!-- 1. In My Face -->
+      <div class="proj-card card-indigo" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+        <div class="card-header-row" style="margin-bottom: 10px;">
+          <div>
+            <p class="card-year year-indigo">macOS · Swift</p>
+            <h2 class="card-title">In My Face</h2>
+          </div>
+          <a href="https://github.com/miss-rizz/in-my-face" target="_blank" rel="noopener" class="card-link-btn link-indigo" title="GitHub">↗</a>
+        </div>
+        <p class="card-desc">I have ADHD. I kept missing meetings — so I built a macOS app that throws a notification directly on my screen whenever one is about to start. No hiding it, no dismissing by accident. I use it every day.</p>
+        <div class="tags">
+          <span class="tag tag-indigo">Swift</span>
+          <span class="tag tag-indigo">macOS</span>
+          <span class="tag tag-indigo">Notifications</span>
+        </div>
+      </div>
+
+      <!-- 2. Semi-Auto Vehicle -->
+      <div class="proj-card card-emerald" data-aos="fade-up" data-aos-duration="500" data-aos-delay="80">
+        <div class="card-header-row" style="margin-bottom: 10px;">
+          <div>
+            <p class="card-year year-emerald">Computer Vision · Python</p>
+            <h2 class="card-title">Semi-Auto Vehicle</h2>
+          </div>
+        </div>
+        <p class="card-desc">A CV system that lets a vehicle navigate on its own. It detects a white path in real-time, calculates the trajectory, and steers through turns — no human input needed on a defined route.</p>
+        <div class="tags">
+          <span class="tag tag-emerald">Python</span>
+          <span class="tag tag-emerald">TensorFlow</span>
+          <span class="tag tag-emerald">Keras</span>
+          <span class="tag tag-emerald">Computer Vision</span>
+        </div>
+      </div>
+
+      <!-- 3. Ashta Changa -->
+      <div class="proj-card card-coral" data-aos="fade-up" data-aos-duration="500" data-aos-delay="160">
+        <div class="card-header-row" style="margin-bottom: 10px;">
+          <div>
+            <p class="card-year year-coral">Multiplayer · Python</p>
+            <h2 class="card-title">Ashta Changa</h2>
+          </div>
+        </div>
+        <p class="card-desc">A digital multiplayer version of Ashta Changa — a centuries-old Indian board game. Two or more players, real-time, no physical board needed.</p>
+        <div class="tags">
+          <span class="tag tag-coral">Python</span>
+          <span class="tag tag-coral">Multiplayer</span>
+          <span class="tag tag-coral">Game Dev</span>
+        </div>
+      </div>
+
+      <!-- 4. Hand Gesture Recognition -->
+      <div class="proj-card card-amber" data-aos="fade-up" data-aos-duration="500" data-aos-delay="240">
+        <div class="card-header-row" style="margin-bottom: 10px;">
+          <div>
+            <p class="card-year year-amber">ML Model · Python</p>
+            <h2 class="card-title">Hand Gesture Recognition</h2>
+          </div>
+        </div>
+        <p class="card-desc">A TensorFlow/Keras model that classifies hand gestures from a live camera feed in real time. A clean ML pipeline from data collection to inference — point, classify, done.</p>
+        <div class="tags">
+          <span class="tag tag-amber">Python</span>
+          <span class="tag tag-amber">TensorFlow</span>
+          <span class="tag tag-amber">Keras</span>
+          <span class="tag tag-amber">Computer Vision</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <!-- FOOTER -->
