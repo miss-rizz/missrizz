@@ -227,25 +227,6 @@
 </head>
 <body>
 
-  <!-- TOP RIGHT ACTIONS -->
-  <div style="position:fixed;top:20px;right:24px;z-index:300;display:flex;align-items:center;gap:14px;">
-    <a href="mailto:agrawalritika1811@gmail.com" class="btn-hire">Hire me</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu" style="position:static;">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <!-- NAV PANEL -->
-  <div class="nav-overlay" id="navOverlay">
-    <div class="nav-backdrop" id="navBackdrop"></div>
-    <nav class="nav-panel">
-      <a href="/">Home</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="mailto:agrawalritika1811@gmail.com" class="btn-hire">Hire me</a>
-    </nav>
-  </div>
-
   <!-- HERO -->
   <section class="hero">
     <div class="hero-photo">
@@ -544,12 +525,6 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
-
-    const hamburger = document.getElementById('hamburger');
-    const navOverlay = document.getElementById('navOverlay');
-    const navBackdrop = document.getElementById('navBackdrop');
-    hamburger.addEventListener('click', () => navOverlay.classList.toggle('open'));
-    navBackdrop.addEventListener('click', () => navOverlay.classList.remove('open'));
 
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.getElementById('dots');
