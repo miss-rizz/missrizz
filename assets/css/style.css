@@ -524,7 +524,7 @@ a { text-decoration: none; color: inherit; }
   .edu-sidebar { padding: 8px 20px 40px; width: 100%; position: static; }
 }
 
-/* Parallel cards (Gruve + AICESA side by side) */
+/* Parallel cards (AI Fabric + AICESA side by side) */
 .timeline-parallel {
   display: flex;
   flex: 1;
